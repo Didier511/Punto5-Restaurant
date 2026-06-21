@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .welcome-band {
+    background-color: #326442;
+    background-image:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.055) 25%, transparent 25%),
+      linear-gradient(225deg, rgba(255, 255, 255, 0.055) 25%, transparent 25%),
+      linear-gradient(45deg, rgba(255, 255, 255, 0.055) 25%, transparent 25%),
+      linear-gradient(315deg, rgba(255, 255, 255, 0.055) 25%, #326442 25%);
+    background-position: 18px 0, 18px 0, 0 0, 0 0;
+    background-size: 36px 36px;
+    background-repeat: repeat;
+  }
+
+  .btn {
+    @apply inline-flex min-h-10 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply bg-gold-500 text-ink hover:bg-gold-400;
+  }
+
+  .btn-secondary {
+    @apply bg-leaf-700 text-white hover:bg-leaf-600;
+  }
+
+  .btn-ghost {
+    @apply border border-stone-200 bg-white text-stone-700 hover:bg-stone-50;
+  }
+
+  .icon-btn {
+    @apply inline-flex h-10 w-10 items-center justify-center rounded-lg border border-stone-200 bg-white transition hover:bg-stone-50;
+  }
+
+  .nav-link {
+    @apply inline-flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-stone-700 transition hover:bg-stone-100;
+  }
+
+  .nav-link-active {
+    @apply bg-leaf-50 text-leaf-700;
+  }
+
+  .form-input {
+    @apply w-full rounded-lg border border-stone-200 bg-white px-3 py-2 text-sm outline-none transition focus:border-leaf-600 focus:ring-4 focus:ring-leaf-100;
+  }
+
+  .carousel-arrow {
+    @apply absolute top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-3xl leading-none text-ink shadow-soft transition hover:bg-white;
+  }
+}
